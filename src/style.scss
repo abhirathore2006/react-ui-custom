@@ -1,0 +1,95 @@
+h1,
+p {
+  font-family: Lato;
+}
+
+@mixin spacing {
+}
+
+body {
+  @include spacing;
+}
+
+$spacingSizes: 0, 1, 2, 3, 4, 5, 6, 7, 8, 12, 16, 20, 24, 28, 32, 40, 48, 64;
+
+@mixin spacing($prefix) {
+  #{$prefix}m-auto {
+    margin: auto;
+  }
+  #{$prefix}mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #{$prefix}my-auto {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  #{$prefix}ml-auto {
+    margin-left: auto;
+  }
+  #{$prefix}mr-auto {
+    margin-right: auto;
+  }
+  #{$prefix}mt-auto {
+    margin-top: auto;
+  }
+  #{$prefix}mb-auto {
+    margin-bottom: auto;
+  }
+
+  @each $size in $spacingSizes {
+    #{$prefix}m-#{$size} {
+      margin: #{$size * 0.25}rem;
+    }
+    #{$prefix}mx-#{$size} {
+      margin-left: #{$size * 0.25}rem;
+      margin-right: #{$size * 0.25}rem;
+    }
+    #{$prefix}my-#{$size} {
+      margin-top: #{$size * 0.25}rem;
+      margin-bottom: #{$size * 0.25}rem;
+    }
+    #{$prefix}ml-#{$size} {
+      margin-left: #{$size * 0.25}rem;
+    }
+    #{$prefix}mr-#{$size} {
+      margin-right: #{$size * 0.25}rem;
+    }
+    #{$prefix}mt-#{$size} {
+      margin-top: #{$size * 0.25}rem;
+    }
+    #{$prefix}mb-#{$size} {
+      margin-bottom: #{$size * 0.25}rem;
+    }
+
+    #{$prefix}p-#{$size} {
+      padding: #{$size * 0.25}rem;
+    }
+    #{$prefix}px-#{$size} {
+      padding-left: #{$size * 0.25}rem;
+      padding-right: #{$size * 0.25}rem;
+    }
+    #{$prefix}py-#{$size} {
+      padding-top: #{$size * 0.25}rem;
+      padding-bottom: #{$size * 0.25}rem;
+    }
+    #{$prefix}pl-#{$size} {
+      padding-left: #{$size * 0.25}rem;
+    }
+    #{$prefix}pr-#{$size} {
+      padding-right: #{$size * 0.25}rem;
+    }
+    #{$prefix}pt-#{$size} {
+      padding-top: #{$size * 0.25}rem;
+    }
+    #{$prefix}pb-#{$size} {
+      padding-bottom: #{$size * 0.25}rem;
+    }
+  }
+}
+
+@include spacing('sm:s-');
+
+.test {
+  background-color: yellow;
+}

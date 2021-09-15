@@ -1,0 +1,62 @@
+$black_50: #222;
+
+@mixin z-level($level) {
+  z-index: $level;
+}
+
+@mixin tableReset {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0px;
+  border: none;
+}
+
+.tps-table {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-spacing: 0;
+  border-collapse: collapse;
+  overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+
+  thead {
+    @include tableReset;
+    position: sticky;
+    @include z-level(5);
+    top: 0px;
+    tr {
+      @include tableReset;
+      display: flex;
+      th {
+        @include tableReset;
+        padding: 4px;
+        border-bottom: 1px solid $black_50;
+        background-color: #fff;
+        font-weight: 500;
+        vertical-align: initial;
+        position: sticky;
+        top: 0px;
+      }
+    }
+  }
+  tbody {
+    @include tableReset;
+    @include z-level(1);
+    tr {
+      @include tableReset;
+      display: flex;
+      td {
+        @include tableReset;
+        padding: 4px;
+        border-bottom: 1px solid $black_50;
+        background-color: #fff;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}

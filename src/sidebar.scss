@@ -1,0 +1,11 @@
+.sidebar {
+  background-color: #cecece;
+  flex-grow: 1;
+  .active {
+    background-color: #333;
+    color: #fff;
+    .active {
+      background-color: #222;
+    }
+  }
+}
